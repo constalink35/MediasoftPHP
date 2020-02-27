@@ -18,7 +18,7 @@
 <hr>  
 
 ## Задание 2.
-Точка входа [index.php](https://github.com/constalink35/MediasoftPHP/blob/master/task2/)
+Точка входа [index.php](https://github.com/constalink35/MediasoftPHP/tree/task2/task2)
 
 Работу функции можно посмотреть [здесь](https://kvltest.000webhostapp.com/task2/index.php)
   
