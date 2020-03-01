@@ -17,7 +17,7 @@
   Работу функции можно посмотреть [здесь](https://kvltest.000webhostapp.com/ms_task1.php)
 <hr>  
 
-## Задание 2.
+## Задание 2. Формы и файлы.
 Точка входа [index.php](https://github.com/constalink35/MediasoftPHP/tree/task2/task2)
 
 Работу функции можно посмотреть [здесь](https://kvltest.000webhostapp.com/task2/index.php)
