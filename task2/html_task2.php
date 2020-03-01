@@ -14,8 +14,10 @@ function showHeader()
 </head>
 
 <body>
-<div class="container">
-    <h3>Задание 2. Циклы и функции.</h3>
+
+
+<div class="container" role="main">
+    <h3>Задание 2. Формы и файлы.</h3>
    <ul>
      <li><p>Добавить на страницу форму с как минимум одним текстовым и одним файловым полем.
     Обрабатывать текст взависимости от поля которое было заполнено, если оба поля были
@@ -58,10 +60,33 @@ print<<<_HTML_
             <label for="exampleFile">Выберите текcтовый файл для анализа (могут быть проблемы с кириллицей)</label>
             <input type="file" accept="text/plain" class="form-control-file " name="exampleFile">
         </div>
-        <input type="submit" value="Обработать" class="btn btn-success">
+        <input type="submit" value="Обработать" class="btn btn-primary">
     </form>
 <br>
 <hr>
 _HTML_;
 
+}
+
+
+function showResultFileHTML($files){
+    //Выводим Список файлов c результатами
+    print '<h5>Список файлов c результатами:</h5>';
+
+    print '<table class="table table-striped table-sm"><thead class="thead-dark">
+        <tr> <th>Файл</th> <th>Создан</th></tr></thead>';
+
+    foreach ($files as $file=>$dateCreate){
+        $dir = getDir();
+        $refFile= $dir.$file;
+        print "<tr><td><a href='$refFile'>$file</a></td> <td>$dateCreate</td> </tr>";
+    }
+
+    print '</table>';
+}
+
+function showError($err){
+    print '<div class="alert alert-danger" role="alert">';
+    print $err;
+    print '</div>';
 }
