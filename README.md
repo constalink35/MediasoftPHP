@@ -21,4 +21,9 @@
 Точка входа [index.php](https://github.com/constalink35/MediasoftPHP/tree/task2/task2)
 
 Работу функции можно посмотреть [здесь](https://kvltest.000webhostapp.com/task2/index.php)
+
+## Задание 3. Работа с СУБД.
+Точка входа [index.php](https://github.com/constalink35/MediasoftPHP/tree/task3/task3)
+
+Работу функции можно посмотреть [здесь](https://kvltest.000webhostapp.com/task3/index.php)
   
