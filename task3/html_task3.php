@@ -121,7 +121,7 @@ function showOneText($text_id)
 
     foreach ($arr_count as $value) {
         print "<tr><td>{$value['word']}</td><td>{$value['count']}</td></tr>";
-        $sum_words += 1;
+        $sum_words += $value['count'];
     }
 
     print "<tr><td><b>Всего слов в тексте:<b></b></td><td><b>{$sum_words}<b></b></td></tr>";

@@ -8,10 +8,11 @@ function getConnDb()
 {
     try {
         $conndb = new PDO("mysql:host=" . DATABASE_HOST . ";dbname=" . DATABASE_NAME, DATABASE_USERNAME, DATABASE_PASSWD);
+        // Задаем кодировку
+        $conndb->exec("set names utf8");
         return $conndb;
     } catch (PDOException $е) {
-        // почему-то не работает PDOException $е - ругается на Undefined variable: e
-        print "Не могу соединиться с базой данных: ";//. $e->getMessage();
+        print "Не могу соединиться с базой данных: ". $е->getMessage();
 
     }
 
@@ -25,10 +26,10 @@ function getListText()
 
         $st = $conn->prepare($sql);
         $st->execute();
-        return ($arrListText = $st->fetchAll(PDO::FETCH_ASSOC));
+        return ($st->fetchAll(PDO::FETCH_ASSOC));
 
-    } catch (PDOException $e) {
-        echo "Ошибка выполнения запроса: "; //. $e->getMessage();
+    } catch (PDOException $е) {
+        echo "Ошибка выполнения запроса: ".$е->getMessage();
     }
 }
 
@@ -42,9 +43,9 @@ function getOneText($text_id)
         $st = $conn->prepare($sql);
         $st->execute(['text_id' => $text_id]);
 
-        return ($arrListText = $st->fetchAll(PDO::FETCH_ASSOC));
-    } catch (PDOException $e) {
-        echo "Ошибка выполнения запроса: "; //. $e->getMessage();
+        return ($st->fetchAll(PDO::FETCH_ASSOC));
+    } catch (PDOException $е) {
+        echo "Ошибка выполнения запроса: ".$е->getMessage();
     }
 }
 
@@ -68,10 +69,9 @@ function addText($content, $arr_count)
             $st->execute(['text_id' => $text_id, 'word' => $key, 'count' => $value]);
         }
 
-    } catch (PDOException $e) {
-        echo "Ошибка выполнения запроса: "; //. $e->getMessage();
+    } catch (PDOException $е) {
+        echo "Ошибка выполнения запроса: ".$е->getMessage();
     }
 }
 
 
-?>
